@@ -1,0 +1,55 @@
+.songRow {
+  margin-left: 10px;
+  padding: 20px;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  color: white;
+  justify-content: space-between;
+}
+
+.songRow:hover {
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.songRow__info {
+  margin-left: 20px;
+}
+
+.songRow__info > h1 {
+  font-size: 16px;
+}
+
+.songRow__info > p {
+  font-size: 14px;
+  margin-top: 3px;
+  color: gray;
+}
+
+.songRow__album {
+  height: 40px;
+  width: 40px;
+}
+
+.songRow__change {
+  align-items: center;
+}
+
+.playlistAddIcon {
+  padding-right: 7px;
+}
+
+.playlistAddIcon:hover {
+  color: gray;
+}
+
+.removeSong:hover {
+  color: gray;
+}
+
+.songRow__left {
+  display: flex;
+}

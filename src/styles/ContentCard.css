@@ -1,0 +1,19 @@
+.mainContent__card {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.mainContent__img {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.mainContent__info {
+  padding: 15px;
+}
+
+.mainContent__card:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 1);
+}

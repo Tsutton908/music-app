@@ -1,0 +1,71 @@
+.addToPlaylistModal {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.addToPlaylistModal__box {
+  width: 300px;
+  height: 70vh;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  background: #282828;
+  color: white;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  overflow-y: overlay;
+}
+
+.addToPlaylistModal__box::-webkit-scrollbar {
+  display: none;
+}
+
+.addToPlaylistModal__playlists {
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  justify-content: space-around;
+}
+
+.addToPlaylistModal__playlists > img {
+  height: 60px;
+  width: 60px;
+}
+
+.addToPlaylistModal__playlists > h3 {
+  padding-left: 10px;
+}
+
+.addToPlaylistModal__box > h2 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.addToPlaylistModal__box > hr {
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  width: 90%;
+  margin: 10px auto;
+}
+
+.addToPlaylistModal__playlists:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal_close_icon {
+  color: white;
+  height: 74vh;
+  cursor: pointer;
+}
+
+.modal_close_icon:hover {
+  color: black;
+}

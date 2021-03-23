@@ -1,0 +1,34 @@
+.home {
+  flex: 0.8;
+  background: linear-gradient(rgb(91, 87, 115), rgba(0, 0, 0, 1));
+  height: 100vh;
+  color: white;
+  padding: 30px;
+  overflow-y: overlay;
+}
+
+.home__topContent {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+  height: 69vh;
+  width: 20vw;
+  color: white;
+  padding: 30px;
+  position: absolute;
+  right: 3%;
+  border-radius: 5px;
+  overflow-y: overlay;
+  z-index: 10;
+  top: 10%;
+}
+
+.home__topContent::-webkit-scrollbar {
+  display: none;
+}
+
+.home__newReleases {
+  margin: 0;
+  max-width: 60%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
