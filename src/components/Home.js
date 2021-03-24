@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 
 import Header from './Header';
 import { useDataLayerValue } from '../DataLayer';
@@ -10,7 +11,7 @@ import '../styles/Home.css';
 
 function Home({ spotify }) {
 
-    const [{ topArtists, topTracks, randomColor, newReleases }, dispatch] = useDataLayerValue();
+    const [{ topArtists, topTracks, randomColor, newReleases, recommendations }, dispatch] = useDataLayerValue();
 
     //const randomColor = Math.floor(Math.random()*16777215).toString(16);
     
@@ -29,6 +30,30 @@ function Home({ spotify }) {
     console.log(topTracks)
     console.log('new releases')
     console.log(newReleases)
+    console.log('recommendations')
+    console.log(recommendations)
+
+    /*useEffect(() => {
+        spotify.getRecommendations({seed_tracks: [`${topTracks?.items[0]?.id}`,`${topTracks?.items[1]?.id}`,`${topTracks?.items[2]?.id}`,`${topTracks?.items[3]?.id}`,`${topTracks?.items[4]?.id}`]}).then((recommendations) => {
+            dispatch({
+              type: 'SET_RECOMMENDATIONS',
+              recommendations: recommendations,
+            })
+          })
+    
+      }, [topTracks >0]);
+*/
+    /*const setRecommendations = () => {
+        spotify.getRecommendations({seed_tracks: [`${topTracks?.items[0]?.id}`,`${topTracks?.items[1]?.id}`,`${topTracks?.items[2]?.id}`,`${topTracks?.items[3]?.id}`,`${topTracks?.items[4]?.id}`]}).then((recommendations) => {
+            dispatch({
+              type: 'SET_RECOMMENDATIONS',
+              recommendations: recommendations,
+            })
+          })
+    }
+
+    setRecommendations();
+    */
 
     return (
         <div 
@@ -40,10 +65,11 @@ function Home({ spotify }) {
             <div className="home__mainContent">
                 <h1>New Releases</h1>
                 <div className="home__newReleases">
-                    {newReleases?.albums.items?.slice(0,5).map((newReleases) => (
+                    {newReleases?.albums.items?.slice(0,10).map((newReleases) => (
                         <ContentCard content={newReleases} playSong={playSong}/>
                     ))}
                 </div>
+
             </div>
 
             <div className="home__topContent">

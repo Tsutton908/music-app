@@ -14,7 +14,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
 
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ user, token, topTracks }, dispatch] = useDataLayerValue();
 
   const randomColor = Math.floor(Math.random()*16777215).toString(16);
 
@@ -103,6 +103,8 @@ function App() {
     }
 
   }, [token, dispatch ]);
+
+  
 
   return (
     <div className="app">
