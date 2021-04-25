@@ -5,18 +5,20 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import '../styles/AddToPlaylist.css';
 
+//acts as modal for when user want to add a song to another playlist
 function AddToPlaylist({ showModal, closeModal }) {
-    const [{ playlists, songToAdd, spotify }, dispatch] = useDataLayerValue();
+    const [{ playlists, songToAdd, spotify }] = useDataLayerValue();
 
+    //function to be called by pushing track id to spotify api to add the track to the selected playlist
     const addToPlaylist = (playlist) => {
-        spotify.addTracksToPlaylist(playlist.id, [`spotify:track:${songToAdd}`], {'uris': [`spotify:track:${songToAdd}`]}).then((response) => {
-            console.log(response)
-        })
+        spotify.addTracksToPlaylist(playlist.id, [`spotify:track:${songToAdd}`], {'uris': [`spotify:track:${songToAdd}`]})
     }
     
     return (
         <>
-        {showModal ? (
+        {
+            //only want the modal to show when the modal state in the reducer has been changed to be True
+        showModal ? (
             <div className="addToPlaylistModal">
                 <div className="addToPlaylistModal__box">
                 
