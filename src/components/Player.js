@@ -29,7 +29,7 @@ function Player() {
             <div className="player__body">
                 <Sidebar />
 
-                <AddToPlaylist showModal={addSongToPlaylist} closeModal={closeModal} closeModal={closeModal}/>
+                <AddToPlaylist showModal={addSongToPlaylist} closeModal={closeModal}/>
 
                 {
                 //if home state in the reducer/dataLayer is active/true then the home component will be rendered, otherwise the body(containing the active playlist) will be rendered.
