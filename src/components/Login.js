@@ -3,13 +3,15 @@ import React from 'react';
 import { loginUrl } from '../config/spotify';
 
 import '../styles/Login.css';
-import Background from '../images/hanny-naibaho-aWXVxy8BSzc-unsplash.jpg';
+
+//imports background image from the public folder
+const loginBackground = window.location.origin + "/hanny-naibaho-aWXVxy8BSzc-unsplash.jpg"
 
 function Login() {
     return (
         <div 
             className="login"
-            style={{background: `url(${Background})`, backgroundRepeat: 'none', backgroundSize: 'cover'}}
+            style={{background: `url(${loginBackground})`, backgroundRepeat: 'none', backgroundSize: 'cover'}}
         >
             
             <h1>Please Login With Your Spotify Account</h1>
