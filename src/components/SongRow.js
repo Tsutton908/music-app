@@ -42,7 +42,6 @@ function SongRow({ track, playSong, setHome, spotify, playlistId, item }) {
     return (
         <div className="songRow" onClick={() => {
                 playSong(track.id)
-                console.log(track.id)
                 }}>
             <div className="songRow__left">
                 <img 

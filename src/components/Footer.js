@@ -27,6 +27,7 @@ function Footer() {
                   sliderHeight: '5px',
                   sliderTrackBorderRadius: '20px',
                 }}
+                autoPlay={true}
             />
         </div>
     )

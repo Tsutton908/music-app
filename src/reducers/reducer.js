@@ -16,6 +16,7 @@ export const initialState = {
     songToAdd: null,
     newReleases: null,
     recommendations: null,
+    playingPlaylist: true,
 };
 
 const reducer = (state, action) => {
@@ -106,6 +107,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 navBar: action.navBar
+            }
+        case 'SET_PLAYING_PLAYLIST':
+            return {
+                ...state,
+                playingPlaylist: action.playingPlaylist
             }
         default:
             return state;

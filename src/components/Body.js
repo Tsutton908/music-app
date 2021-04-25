@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './Header';
 import { useDataLayerValue } from '../DataLayer';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
+import PauseCircleFilledIcon from '@material-ui/icons/PauseCircleFilled';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import SongRow from './SongRow';
@@ -11,7 +12,7 @@ import '../styles/Body.css';
 
 function Body() {
 
-    const [{ discover_weekly, randomColor, spotify }, dispatch] = useDataLayerValue();
+    const [{ discover_weekly, randomColor, spotify, playingPlaylist }, dispatch] = useDataLayerValue();
 
     //pushes the currently playing song to the reducer data layer
      const playSong = (id) => {
@@ -20,6 +21,14 @@ function Body() {
         song: id,
       })
      };
+
+     //changes the state of the play button for the current playlist
+     const playButton = (bool) => (
+      dispatch({
+        type: 'SET_PLAYING_PLAYLIST',
+        playingPlaylist: bool,
+      })
+     );
 
     return (
         <div 
@@ -42,7 +51,16 @@ function Body() {
 
             <div className="body__songs">
                 <div className="body__icons">
-                        <PlayCircleFilledIcon className="body__shuffle"/>
+                  { playingPlaylist ?
+                    <PlayCircleFilledIcon className="body__shuffle" onClick={() => {
+                      playSong(discover_weekly.tracks.items.[0].track.id);
+                      playButton(false);
+                    }}
+                    /> : <PauseCircleFilledIcon className="body__shuffle active" onClick={() => {
+                      playButton(true);
+                    }}
+                    />
+                  }
                     <FavoriteIcon fontSize='large'/>
                     <MoreHorizIcon />
                 </div>
