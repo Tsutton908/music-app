@@ -1,19 +1,17 @@
 import React from 'react';
 
 import SidebarOption from './SidebarOption';
-import HomeIcon from '@material-ui/icons/Home';
-import SearchIcon from '@material-ui/icons/Search';
-import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
+import HomeIcon from '@material-ui/icons/Home'; 
 import { useDataLayerValue } from '../DataLayer';
 
 import '../styles/Sidebar.css';
 
 function Sidebar() {
 
-    const [{ playlists, home, song, token, spotify }, dispatch] = useDataLayerValue();
+    //pulls playlists and spotify objects from reducer data layer
+    const [{ playlists, spotify }, dispatch] = useDataLayerValue();
 
-    console.log(playlists)
-
+    //function when called sets the active playlist being shown in the body of the page; i.e when a playlist is selected the active playlist id is changed
     const setActivePlaylist = (id) => {
             spotify.getPlaylist(id).then(response => {
                 dispatch({
@@ -23,16 +21,6 @@ function Sidebar() {
               })
     }
 
-    /*function backgroundColor () {
-            let randomColor = Math.floor(Math.random()*16777215).toString(16);
-
-            dispatch({
-                type: 'SET_RANDOM_COLOR',
-                randomColor: randomColor,
-            })
-        }  */
-    
-
     return (
         <div className="sidebar">
             <img 
@@ -41,13 +29,14 @@ function Sidebar() {
                 className="sidebar__logo"
             />
             <SidebarOption title='Home' Icon={HomeIcon}/>
-            <SidebarOption title='Search' Icon={SearchIcon}/>
 
             <br />
             <strong className="sidebar__title">PLAYLISTS</strong>
             <hr />
 
-            {playlists?.items?.map((playlist) => (
+            {
+                //sorts through the returned playlist object to be able to load each individual playlist title on the sidebar
+            playlists?.items?.map((playlist) => (
                 <SidebarOption title={playlist.name} setActivePlaylist={setActivePlaylist} playlist={playlist} />
             ))}
         </div>
