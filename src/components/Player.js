@@ -9,10 +9,14 @@ import AddToPlaylist from './AddToPlaylist';
 
 import '../styles/Player.css';
 
-function Player({ spotify }) {
+//Player acts as the main component being rendured when login / authentication is successful 
 
-    const [{ home, addSongToPlaylist }, dispatch] = useDataLayerValue();
+function Player() {
 
+    const [{ home, addSongToPlaylist, spotify }, dispatch] = useDataLayerValue();
+
+    //pushes the state of the modal that appears when a song is added to a user's playlist. state is pushed to the redux reducer's 'addSongToPlaylist' variable
+    //acts as function to close the modal after either the user adds a track to a playlist or the 'exit' button is pushed.
     const closeModal = () => {
         dispatch({
             type: 'SET_ADDSONGTOPLAYLIST',
@@ -23,19 +27,21 @@ function Player({ spotify }) {
     return (
         <div className="player">
             <div className="player__body">
-                <Sidebar spotify={spotify}/>
+                <Sidebar />
 
-                <AddToPlaylist showModal={addSongToPlaylist} closeModal={closeModal} spotify={spotify} closeModal={closeModal}/>
+                <AddToPlaylist showModal={addSongToPlaylist} closeModal={closeModal} closeModal={closeModal}/>
 
-                {home ? (
+                {
+                //if home state in the reducer/dataLayer is active/true then the home component will be rendered, otherwise the body(containing the active playlist) will be rendered.
+                home ? (
 
-                    <Home spotify={spotify}/>
+                    <Home />
                 ) : (
-                    <Body spotify={spotify}/>
+                    <Body />
                 )}
             </div>
         
-            <Footer spotify={spotify}/>
+            <Footer />
         </div>
     )
 }

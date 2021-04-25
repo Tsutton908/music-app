@@ -19,6 +19,7 @@ function App() {
   //constant set at the beginning of loaded page to update the background color to be randomly selected
   const randomColor = Math.floor(Math.random()*16777215).toString(16);
 
+
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = '';
@@ -42,6 +43,12 @@ function App() {
           type: 'SET_USER',
           user: user,
         })
+      })
+
+      //pushes spotify package to the datlayer so it can be used though-out other components without drilling
+      dispatch({
+        type: 'SET_SPOTIFY',
+        spotify: spotify
       })
     }
 
@@ -112,7 +119,7 @@ function App() {
       {
         //if the user is logged in the rest of the app will be showed, otherwise redirects to the login screen
         token ? (
-          <Player spotify={spotify}/>
+          <Player />
         ) : (
           <Login />
         )

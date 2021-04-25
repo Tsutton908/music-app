@@ -5,8 +5,8 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import '../styles/AddToPlaylist.css';
 
-function AddToPlaylist({ showModal, closeModal, spotify }) {
-    const [{ playlists, songToAdd }, dispatch] = useDataLayerValue();
+function AddToPlaylist({ showModal, closeModal }) {
+    const [{ playlists, songToAdd, spotify }, dispatch] = useDataLayerValue();
 
     const addToPlaylist = (playlist) => {
         spotify.addTracksToPlaylist(playlist.id, [`spotify:track:${songToAdd}`], {'uris': [`spotify:track:${songToAdd}`]}).then((response) => {

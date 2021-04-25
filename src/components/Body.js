@@ -10,9 +10,9 @@ import SongRow from './SongRow';
 
 import '../styles/Body.css';
 
-function Body({ spotify }) {
+function Body() {
 
-    const [{ discover_weekly, randomColor, devices, token }, dispatch] = useDataLayerValue();
+    const [{ discover_weekly, randomColor, devices, token, spotify }, dispatch] = useDataLayerValue();
 
     /*const playPlaylist = (id) => {
         spotify

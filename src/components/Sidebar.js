@@ -8,9 +8,9 @@ import { useDataLayerValue } from '../DataLayer';
 
 import '../styles/Sidebar.css';
 
-function Sidebar({ spotify }) {
+function Sidebar() {
 
-    const [{ playlists, home, song, token }, dispatch] = useDataLayerValue();
+    const [{ playlists, home, song, token, spotify }, dispatch] = useDataLayerValue();
 
     console.log(playlists)
 

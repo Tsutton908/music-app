@@ -16,9 +16,9 @@ import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
 import '../styles/Footer.css';
 import { useDataLayerValue } from '../DataLayer';
 
-function Footer({ spotify }) {
+function Footer() {
 
-    const [{ token, song, playing, randomColor }, dispatch] = useDataLayerValue();
+    const [{ token, song, playing, randomColor, spotify }, dispatch] = useDataLayerValue();
 
 
       const handlePlayPause = () => {

@@ -9,7 +9,7 @@ import ContentCard from './ContentCard';
 
 import '../styles/Home.css';
 
-function Home({ spotify }) {
+function Home() {
 
     const [{ topArtists, topTracks, randomColor, newReleases, recommendations }, dispatch] = useDataLayerValue();
 
