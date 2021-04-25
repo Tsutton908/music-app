@@ -7,10 +7,9 @@ import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import '../styles/SongRow.css';
 
 function SongRow({ track, playSong, setHome, spotify, playlistId, item }) {
-    const [{ user, playlists }, dispatch] = useDataLayerValue();
+    const [{ }, dispatch] = useDataLayerValue();
 
-    //console.log(item)
-
+    //function to operate modal when adding song to playlist
     const openAddSongModal = (id) => {
         dispatch({
             type: 'SET_ADDSONGTOPLAYLIST',
@@ -23,13 +22,14 @@ function SongRow({ track, playSong, setHome, spotify, playlistId, item }) {
         })
     }
 
+    //function to remove selected track from a user's playlist
     const removeSong = (playlist, id, item) => {
         spotify.removeTracksFromPlaylist(playlist, [{ uri : `spotify:track:${id}`, positions: [item] }]).then((response) => {
-            console.log(response)
         })
     }
 
-    const testing = (item, id) => {
+    //function tracks the selected song's location in the playlist / array in order to select its atributes
+    const trackId = (item, id) => {
         var i;
         for(i = 0; i < item.length; i++){
             if(item[i].track.id === `${id}`){
@@ -75,9 +75,8 @@ function SongRow({ track, playSong, setHome, spotify, playlistId, item }) {
                 <RemoveCircleOutlineIcon 
                     className="removeSong"
                     onClick={() => {
-                        const trackLocation = testing(item, track.id);
+                        const trackLocation = trackId(item, track.id);
                         removeSong(playlistId, track.id, trackLocation)
-                        //testing(item, track.id)
                     }}
                 />
             </div>
