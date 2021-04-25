@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '../styles/TopAlbumRow.css';
 
 function TopAlbumRow({ artist }) {

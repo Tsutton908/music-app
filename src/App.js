@@ -7,8 +7,6 @@ import { getTokenFromUrl } from './config/spotify';
 import Player from './components/Player'; 
 import { useDataLayerValue } from './DataLayer';
 
-import './App.css';
-
 //spotify package to allow access to the spotify api and user content
 const spotify = new SpotifyWebApi();
 
