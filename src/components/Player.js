@@ -13,7 +13,7 @@ import '../styles/Player.css';
 
 function Player() {
 
-    const [{ home, addSongToPlaylist, spotify }, dispatch] = useDataLayerValue();
+    const [{ home, addSongToPlaylist }, dispatch] = useDataLayerValue();
 
     //pushes the state of the modal that appears when a song is added to a user's playlist. state is pushed to the redux reducer's 'addSongToPlaylist' variable
     //acts as function to close the modal after either the user adds a track to a playlist or the 'exit' button is pushed.
