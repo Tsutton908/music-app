@@ -1,5 +1,4 @@
 import React from 'react';
-import SpotifyPlayer from 'react-spotify-web-playback';
 
 import Header from './Header';
 import { useDataLayerValue } from '../DataLayer';
@@ -12,61 +11,10 @@ import '../styles/Body.css';
 
 function Body() {
 
-    const [{ discover_weekly, randomColor, devices, token, spotify }, dispatch] = useDataLayerValue();
+    const [{ discover_weekly, randomColor, spotify }, dispatch] = useDataLayerValue();
 
-    /*const playPlaylist = (id) => {
-        spotify
-          .play({
-            context_uri: `spotify:playlist:60vUcvSmx6gubMzTMlMXW1`,
-          })
-          .then((res) => {
-            spotify.getMyCurrentPlayingTrack().then((r) => {
-              dispatch({
-                type: "SET_ITEM",
-                item: r.item,
-              });
-              dispatch({
-                type: "SET_PLAYING",
-                playing: true,
-              });
-            });
-          });
-      };
-      */
-      /*const playPlaylist = (id) => {
-        spotify.getMyDevices().then((data) {
-          let availableDevices = data.body.devices;
-          console.log(availableDevices);
-        }, function(err) {
-          console.log('Something went wrong!', err);
-        });
-      };
-      */
-
-    console.log(discover_weekly)
-
-    /*
-    const playSong = (id) => {
-        spotify
-          .play({
-            uris: [`spotify:track:${id}`],
-          })
-          .then((res) => {
-            spotify.getMyCurrentPlayingTrack().then((response) => {
-              dispatch({
-                type: "SET_SONG",
-                song: response.song,
-              });
-              dispatch({
-                type: "SET_PLAYING",
-                playing: true,
-              });
-            });
-          });
-      };
-      */
+    //pushes the currently playing song to the reducer data layer
      const playSong = (id) => {
-       console.log(id);
       dispatch({
         type: 'SET_SONG',
         song: id,
@@ -76,8 +24,11 @@ function Body() {
     return (
         <div 
           className="body"
-          style={{background: `linear-gradient(#${randomColor}, rgba(0, 0, 0, 1))`}}
         >
+          <div 
+            className="body_background_color"
+            style={{background: `linear-gradient(170deg,  #${randomColor} -30%, rgba(26, 26, 26, 1) 40%)`}}
+          >
             <Header />
 
             <div className="body__info">
@@ -99,6 +50,7 @@ function Body() {
                 {discover_weekly?.tracks.items.map(item => (
                     <SongRow track={item.track} playSong={playSong} spotify={spotify} playlistId={discover_weekly.id} item={discover_weekly.tracks.items}/>
                 ))}
+            </div>
             </div>
         </div>
     )

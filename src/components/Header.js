@@ -8,7 +8,7 @@ import '../styles/Header.css';
 
 function Header() {
 
-    const [{ user }, dispatch] = useDataLayerValue();
+    const [{ user }] = useDataLayerValue();
 
     return (
         <div className="header">

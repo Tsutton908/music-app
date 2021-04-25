@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 
 import Header from './Header';
 import { useDataLayerValue } from '../DataLayer';
@@ -11,54 +10,22 @@ import '../styles/Home.css';
 
 function Home() {
 
-    const [{ topArtists, topTracks, randomColor, newReleases, recommendations }, dispatch] = useDataLayerValue();
-
-    //const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    const [{ topArtists, topTracks, randomColor, newReleases }, dispatch] = useDataLayerValue();
     
+    //function called to set the currently playing song to the reducer datalayer to be used in the player
     const playSong = (id) => {
-        console.log(id);
        dispatch({
          type: 'SET_SONG',
          song: id,
        })
       };
- 
-
-    console.log('top artists')
-    console.log(topArtists)
-    console.log('top tracks')
-    console.log(topTracks)
-    console.log('new releases')
-    console.log(newReleases)
-    console.log('recommendations')
-    console.log(recommendations)
-
-    /*useEffect(() => {
-        spotify.getRecommendations({seed_tracks: [`${topTracks?.items[0]?.id}`,`${topTracks?.items[1]?.id}`,`${topTracks?.items[2]?.id}`,`${topTracks?.items[3]?.id}`,`${topTracks?.items[4]?.id}`]}).then((recommendations) => {
-            dispatch({
-              type: 'SET_RECOMMENDATIONS',
-              recommendations: recommendations,
-            })
-          })
-    
-      }, [topTracks >0]);
-*/
-    /*const setRecommendations = () => {
-        spotify.getRecommendations({seed_tracks: [`${topTracks?.items[0]?.id}`,`${topTracks?.items[1]?.id}`,`${topTracks?.items[2]?.id}`,`${topTracks?.items[3]?.id}`,`${topTracks?.items[4]?.id}`]}).then((recommendations) => {
-            dispatch({
-              type: 'SET_RECOMMENDATIONS',
-              recommendations: recommendations,
-            })
-          })
-    }
-
-    setRecommendations();
-    */
 
     return (
+        
         <div 
             className="home" 
-            style={{background: `linear-gradient(#${randomColor}, rgba(0, 0, 0, 1))`}}
+            /*style={{background: `rgba(0, 0, 0, 1)`}}*/
+            style={{background: `linear-gradient(170deg,  #${randomColor}, rgba(26, 26, 26, 1) 40%)`}}
         >
             <Header />
 

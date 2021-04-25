@@ -19,9 +19,6 @@ export const initialState = {
 };
 
 const reducer = (state, action) => {
-    //logged to console for troubleshooting purposes
-    console.log(action);
-
     //action has a type and a payload
 
     switch(action.type) {
@@ -104,6 +101,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 recommendations: action.recommendations
+            }
+        case 'SET_NAVBAR_ACTIVE':
+            return {
+                ...state,
+                navBar: action.navBar
             }
         default:
             return state;

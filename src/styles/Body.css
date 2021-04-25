@@ -1,9 +1,8 @@
 .body {
   flex: 0.8;
-  background: linear-gradient(rgb(91, 87, 115), rgba(0, 0, 0, 1));
-  height: 84vh;
+  background: rgba(26, 26, 26, 1);
+  height: 88vh;
   color: white;
-  padding: 30px;
   overflow-y: overlay;
 }
 
@@ -61,4 +60,9 @@
 
 .body__songs {
   margin: 20px -30px;
+}
+
+.body_background_color {
+  padding: 30px;
+  height: 100vh;
 }
