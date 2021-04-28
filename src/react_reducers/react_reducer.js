@@ -17,6 +17,8 @@ export const initialState = {
     newReleases: null,
     recommendations: null,
     playingPlaylist: true,
+    guest: false,
+    nonFunctionalModal: false,
 };
 
 const reducer = (state, action) => {
@@ -112,6 +114,16 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 playingPlaylist: action.playingPlaylist
+            }
+        case 'SET_GUEST':
+            return {
+                ...state,
+                guest: action.guest
+            }
+        case 'SET_NONFUNCTIONAL_MODAL':
+            return {
+                ...state,
+                nonFunctionalModal: action.nonFunctionalModal
             }
         default:
             return state;

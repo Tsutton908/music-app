@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { loginUrl } from '../config/spotify';
+import { loginUrlGuest } from '../config/spotify_guest';
 
 import '../styles/Login.css';
 
@@ -16,6 +17,7 @@ function Login() {
             
             <h1>Please Login With Your Spotify Account</h1>
             <a href={loginUrl}>LOGIN WITH SPOTIFY</a>
+            <a href={loginUrlGuest}>LOGIN AS A GUEST</a>
         </div>
     )
 }

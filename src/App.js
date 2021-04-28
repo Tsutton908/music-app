@@ -4,6 +4,7 @@ import SpotifyWebApi from 'spotify-web-api-js';
 
 import Login from './components/Login';
 import { getTokenFromUrl } from './config/spotify';
+import { getTokenFromUrlGuest } from './config/spotify_guest';
 import Player from './components/Player'; 
 import { useDataLayerValue } from './DataLayer';
 
@@ -12,14 +13,19 @@ const spotify = new SpotifyWebApi();
 
 function App() {
 
-  const [{ token }, dispatch] = useDataLayerValue();
+  const [{ token, guest }, dispatch] = useDataLayerValue();
 
   //constant set at the beginning of loaded page to update the background color to be randomly selected
   const randomColor = Math.floor(Math.random()*16777215).toString(16);
 
 
-  useEffect(() => {
-    const hash = getTokenFromUrl();
+  useEffect(() => { 
+
+    let hash = null
+
+    guest ? hash = getTokenFromUrlGuest() : hash = getTokenFromUrl();
+
+    //const hash = getTokenFromUrl();
     window.location.hash = '';
 
     //stores the token in an external storage for safe use inside the app

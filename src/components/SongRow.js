@@ -9,6 +9,7 @@ import '../styles/SongRow.css';
 function SongRow({ track, playSong, setHome, spotify, playlistId, item }) {
     const [{ }, dispatch] = useDataLayerValue();
 
+    console.log("song")
     //function to operate modal when adding song to playlist
     const openAddSongModal = (id) => {
         dispatch({
@@ -40,10 +41,10 @@ function SongRow({ track, playSong, setHome, spotify, playlistId, item }) {
     }
 
     return (
-        <div className="songRow" onClick={() => {
+        <div className="songRow">
+            <div className="songRow__left" onClick={() => {
                 playSong(track.id)
                 }}>
-            <div className="songRow__left">
                 <img 
                     src={track.album.images[0].url} 
                     alt="" 

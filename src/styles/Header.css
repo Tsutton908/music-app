@@ -25,6 +25,10 @@
   align-items: center;
 }
 
+.header__right:hover {
+  cursor: pointer;
+}
+
 .header__right > h4 {
   margin-left: 10px;
 }

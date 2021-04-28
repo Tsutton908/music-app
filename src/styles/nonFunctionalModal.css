@@ -1,0 +1,53 @@
+.nonFunctionalModal {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .nonFunctionalModal__box {
+    width: 30vw;
+    height: 20vh;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    background: #282828;
+    color: white;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: overlay;
+  }
+  
+  .nonFunctionalModal__box::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nonFunctionalModal__box > h3 {
+    padding: 10px 20px 0 20px;
+    text-align: center;
+  }
+  
+  .nonFunctionalModal__box > h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .nonFunctionalModal__box > hr {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .modal_close_icon {
+    color: white;
+    height: 24vh;
+    cursor: pointer;
+  }
+  
+  .modal_close_icon:hover {
+    color: red;
+  }

@@ -8,7 +8,15 @@ import '../styles/Header.css';
 
 function Header() {
 
-    const [{ user }] = useDataLayerValue();
+    const [{ user }, dispatch] = useDataLayerValue();
+
+    const openNonFunctionalModal = () => {
+        dispatch({
+            type: 'SET_NONFUNCTIONAL_MODAL',
+            nonFunctionalModal: true,
+        })
+    }
+    
 
     return (
         <div className="header">
@@ -17,12 +25,21 @@ function Header() {
                 <input 
                     placeholder="Search for Artists, Songs, or Podcasts"
                     type="text"
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                            openNonFunctionalModal()
+                        }
+                    }}
                 />
             </div>
-            <div className="header__right">
+            <a className="header__right"
+                onClick={() => {
+                    openNonFunctionalModal()
+                }}
+            >
                     <Avatar src={user?.images[0]?.url} alt={user?.display_name} />
                     <h4>{user?.display_name}</h4>
-            </div>
+            </a>
         </div>
     )
 }

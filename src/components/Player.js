@@ -6,6 +6,7 @@ import Footer from './Footer';
 import Home from './Home';
 import { useDataLayerValue } from '../DataLayer';
 import AddToPlaylist from './AddToPlaylist';
+import NonFunctionalModal from './NonFunctionalModal';
 
 import '../styles/Player.css';
 
@@ -22,6 +23,11 @@ function Player() {
             type: 'SET_ADDSONGTOPLAYLIST',
             addSongToPlaylist: false,
         })
+
+        dispatch({
+            type: 'SET_NONFUNCTIONAL_MODAL',
+            nonFunctionalModal: false,
+        })
     }
 
     return (
@@ -30,6 +36,7 @@ function Player() {
                 <Sidebar />
 
                 <AddToPlaylist showModal={addSongToPlaylist} closeModal={closeModal}/>
+                <NonFunctionalModal showModal={addSongToPlaylist} closeModal={closeModal}/>
 
                 {
                 //if home state in the reducer/dataLayer is active/true then the home component will be rendered, otherwise the body(containing the active playlist) will be rendered.
