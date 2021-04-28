@@ -9,7 +9,7 @@ import '../styles/Footer.css';
 
 function Footer() {
 
-    const [{ token, song, randomColor }] = useDataLayerValue();
+    const [{ token, song, randomColor, playing }] = useDataLayerValue();
 
     return (
         <div className="footer">
@@ -27,7 +27,8 @@ function Footer() {
                   sliderHeight: '5px',
                   sliderTrackBorderRadius: '20px',
                 }}
-                autoPlay={true}
+                autoPlay={playing}
+                play={playing}
             />
         </div>
     )

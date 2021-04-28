@@ -20,6 +20,11 @@ function Body() {
         type: 'SET_SONG',
         song: id,
       })
+
+      dispatch({
+        type: 'SET_PLAYING',
+        playing: true,
+      })
      };
 
      //changes the state of the play button for the current playlist
@@ -53,7 +58,7 @@ function Body() {
                 <div className="body__icons">
                   { playingPlaylist ?
                     <PlayCircleFilledIcon className="body__shuffle" onClick={() => {
-                      playSong(discover_weekly.tracks.items.[0].track.id);
+                      playSong(discover_weekly.tracks.items[0].track.id);
                       playButton(false);
                     }}
                     /> : <PauseCircleFilledIcon className="body__shuffle active" onClick={() => {

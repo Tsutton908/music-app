@@ -18,6 +18,11 @@ function Home() {
          type: 'SET_SONG',
          song: id,
        })
+
+       dispatch({
+        type: 'SET_PLAYING',
+        playing: true,
+      })
       };
 
     return (

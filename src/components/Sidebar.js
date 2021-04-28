@@ -2,6 +2,7 @@ import React from 'react';
 
 import SidebarOption from './SidebarOption';
 import HomeIcon from '@material-ui/icons/Home'; 
+import GitHubIcon from '@material-ui/icons/GitHub';
 import { useDataLayerValue } from '../DataLayer';
 
 import '../styles/Sidebar.css';
@@ -29,6 +30,9 @@ function Sidebar() {
                 className="sidebar__logo"
             />
             <SidebarOption title='Home' Icon={HomeIcon}/>
+            <a href="https://github.com/Tsutton908/music-app" target="blank">
+            <SidebarOption title='Project GitHub' Icon={GitHubIcon}/>
+            </a>
 
             <br />
             <strong className="sidebar__title">PLAYLISTS</strong>
