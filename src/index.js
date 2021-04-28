@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import { DataLayer } from './DataLayer';
-import reducer, { initialState } from './reducers/react_reducer';
+import reducer, { initialState } from './react_reducers/react_reducer';
 
 import './index.css';
 
