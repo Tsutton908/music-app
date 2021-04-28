@@ -26,7 +26,7 @@ The majority react components and logic was written from scratch by myself. I ch
 - React (create-react-app CLI)
 - React-dom
 - Redux
-- Firebase 
+- Firebase (for hosting only)
 
 ## API Frameworks Used
 - react-spotify-web-playback
