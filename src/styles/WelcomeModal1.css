@@ -1,0 +1,62 @@
+.welcomeModal1 {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .welcomeModal1__box {
+    width: 40vw;
+    height: 40vh;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    background: #282828;
+    color: white;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: overlay;
+  }
+  
+  .welcomeModal1__box::-webkit-scrollbar {
+    display: none;
+  }
+
+  .welcomeModal1__box > h3 {
+    padding: 10px 20px 0 20px;
+    text-align: center;
+  }
+
+  .welcomeModal1__box > h4 {
+    padding: 10px 20px 0 20px;
+    text-align: center;
+  }
+  
+  .welcomeModal1__box > h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  .welcomeModal1__box > hr {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .welcomeModal1__notice {
+      color: #309148;
+  }
+
+  .welcomeModal1_close_icon {
+    color: white;
+    height: 44vh;
+    cursor: pointer;
+  }
+  
+  .welcomeModal1_close_icon:hover {
+    color: red;
+  }

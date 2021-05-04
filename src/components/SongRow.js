@@ -9,7 +9,6 @@ import '../styles/SongRow.css';
 function SongRow({ track, playSong, setHome, spotify, playlistId, item }) {
     const [{ }, dispatch] = useDataLayerValue();
 
-    console.log("song")
     //function to operate modal when adding song to playlist
     const openAddSongModal = (id) => {
         dispatch({

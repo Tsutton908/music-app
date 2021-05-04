@@ -19,6 +19,7 @@ export const initialState = {
     playingPlaylist: true,
     guest: false,
     nonFunctionalModal: false,
+    welcomeModal1: true,
 };
 
 const reducer = (state, action) => {
@@ -124,6 +125,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 nonFunctionalModal: action.nonFunctionalModal
+            }
+        case 'SET_WELCOME_MODAL_1':
+            return {
+                ...state,
+                welcomeModal1: action.welcomeModal1
             }
         default:
             return state;
