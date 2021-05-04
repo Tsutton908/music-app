@@ -8,6 +8,9 @@ import { useDataLayerValue } from '../DataLayer';
 import AddToPlaylist from './AddToPlaylist';
 import NonFunctionalModal from './NonFunctionalModal';
 import WelcomeModal1 from './WelcomeModal1';
+import WelcomeModal2 from './WelcomeModal2';
+import WelcomeModal3 from './WelcomeModal3';
+import WelcomeModal4 from './WelcomeModal4';
 
 import '../styles/Player.css';
 
@@ -35,6 +38,21 @@ function Player() {
             type: 'SET_WELCOME_MODAL_1',
             welcomeModal1: false,
         })
+
+        dispatch({
+            type: 'SET_WELCOME_MODAL_2',
+            welcomeModal2: false,
+        })
+
+        dispatch({
+            type: 'SET_WELCOME_MODAL_3',
+            welcomeModal3: false,
+        })
+
+        dispatch({
+            type: 'SET_WELCOME_MODAL_4',
+            welcomeModal4: false,
+        })
     }
 
     return (
@@ -45,6 +63,9 @@ function Player() {
                 <AddToPlaylist showModal={addSongToPlaylist} closeModal={closeModal}/>
                 <NonFunctionalModal showModal={addSongToPlaylist} closeModal={closeModal}/>
                 <WelcomeModal1 showModal={addSongToPlaylist} closeModal={closeModal}/>
+                <WelcomeModal2 showModal={addSongToPlaylist} closeModal={closeModal}/>
+                <WelcomeModal3 showModal={addSongToPlaylist} closeModal={closeModal}/>
+                <WelcomeModal4 showModal={addSongToPlaylist} closeModal={closeModal}/>
 
                 {
                 //if home state in the reducer/dataLayer is active/true then the home component will be rendered, otherwise the body(containing the active playlist) will be rendered.

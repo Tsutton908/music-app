@@ -1,4 +1,4 @@
-.welcomeModal1 {
+.welcomeModal2 {
     display: flex;
     height: 100%;
     width: 100%;
@@ -9,70 +9,73 @@
     z-index: 100;
   }
   
-  .welcomeModal1__box {
-    width: 40vw;
-    height: 40vh;
+  .welcomeModal2__box {
+    width: 20vw;
+    height: 35vh;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
     background: #282828;
     color: white;
-    position: relative;
+    position: absolute;
     border-radius: 10px;
     overflow: hidden;
     overflow-y: overlay;
+    left: 20vw;
+    top: 26vh;
   }
   
-  .welcomeModal1__box::-webkit-scrollbar {
+  .welcomeModal2__box::-webkit-scrollbar {
     display: none;
   }
 
-  .welcomeModal1__box > h3 {
+  .welcomeModal2__box > h3 {
     padding: 10px 20px 0 20px;
     text-align: center;
   }
 
-  .welcomeModal1__box > h4 {
+  .welcomeModal2__box > h4 {
     padding: 10px 20px 0 20px;
     text-align: center;
   }
   
-  .welcomeModal1__box > h2 {
+  .welcomeModal2__box > h2 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 5px;
   }
 
-  .welcomeModal1__box > hr {
+  .welcomeModal2__box > hr {
     border: 1px solid rgba(0, 0, 0, 0.7);
     width: 90%;
     margin: 10px auto;
   }
 
-  .welcomeModal1__notice {
+  .welcomeModal2__notice {
       color: #309148;
   }
 
-  .welcomeModal1_close_icon {
+  .welcomeModal2_close_icon {
     position: absolute;
     color: white;
-    top: 28vh;
-    right: 28.5vw;
+    top: 24vh;
+    right: 59vw;
     cursor: pointer;
   }
   
-  .welcomeModal1_close_icon:hover {
+  .welcomeModal2_close_icon:hover {
     color: red;
   }
 
-  .welcomeModal1__continue {
+  .welcomeModal2__continue {
       color: white;
       cursor: pointer;
       transition: 200ms color ease-in;
       align-items: center;
       text-align: right;
       padding-right: 20px;
+      padding-top: 15px;
   }
 
-  .welcomeModal1__continue:hover {
+  .welcomeModal2__continue:hover {
     color: #309148;
 }
 
@@ -86,7 +89,7 @@
       align-items: center;
   }
 
-  .welcomeModal1__continue > a {
+  .welcomeModal2__continue > a {
     margin-top: 10px;
     margin-left: 20px;
     font-size: 14px;
@@ -101,4 +104,15 @@
     transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     flex-shrink: 0;
     user-select: none;
+}
+
+.welcomeModal2__arrow {
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    border-right:20px solid #282828;
+    position: absolute;
+    left: 19vw;
+    top: 30vh;
 }

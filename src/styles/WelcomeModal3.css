@@ -1,4 +1,4 @@
-.welcomeModal1 {
+.welcomeModal3 {
     display: flex;
     height: 100%;
     width: 100%;
@@ -9,70 +9,74 @@
     z-index: 100;
   }
   
-  .welcomeModal1__box {
-    width: 40vw;
-    height: 40vh;
+  .welcomeModal3__box {
+    width: 30vw;
+    height: 35vh;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
     background: #282828;
     color: white;
-    position: relative;
+    position: absolute;
     border-radius: 10px;
     overflow: hidden;
     overflow-y: overlay;
+    left: 35vw;
+    bottom: 16vh;
   }
   
-  .welcomeModal1__box::-webkit-scrollbar {
+  .welcomeModal3__box::-webkit-scrollbar {
     display: none;
   }
 
-  .welcomeModal1__box > h3 {
+  .welcomeModal3__box > h3 {
     padding: 10px 20px 0 20px;
     text-align: center;
   }
 
-  .welcomeModal1__box > h4 {
+  .welcomeModal3__box > h4 {
     padding: 10px 20px 0 20px;
     text-align: center;
   }
   
-  .welcomeModal1__box > h2 {
+  .welcomeModal3__box > h2 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 5px;
   }
 
-  .welcomeModal1__box > hr {
+  .welcomeModal3__box > hr {
     border: 1px solid rgba(0, 0, 0, 0.7);
     width: 90%;
     margin: 10px auto;
   }
 
-  .welcomeModal1__notice {
+  .welcomeModal3__notice {
       color: #309148;
   }
 
-  .welcomeModal1_close_icon {
+  .welcomeModal3_close_icon {
     position: absolute;
     color: white;
-    top: 28vh;
-    right: 28.5vw;
+    top: 47vh;
+    right: 34vw;
     cursor: pointer;
   }
   
-  .welcomeModal1_close_icon:hover {
+  .welcomeModal3_close_icon:hover {
     color: red;
   }
 
-  .welcomeModal1__continue {
+  .welcomeModal3__continue {
       color: white;
       cursor: pointer;
       transition: 200ms color ease-in;
       align-items: center;
       text-align: right;
       padding-right: 20px;
+      padding-top: 15px;
+      padding-bottom: 10px;
   }
 
-  .welcomeModal1__continue:hover {
+  .welcomeModal3__continue:hover {
     color: #309148;
 }
 
@@ -86,10 +90,11 @@
       align-items: center;
   }
 
-  .welcomeModal1__continue > a {
+  .welcomeModal3__continue > a {
     margin-top: 10px;
     margin-left: 20px;
     font-size: 14px;
+    margin-bottom: 5px;
 }
 
 .MuiSvgIcon-root.continue__icon {
@@ -101,4 +106,19 @@
     transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     flex-shrink: 0;
     user-select: none;
+}
+
+.welcomeModal3__arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;  
+    border-top: 20px solid #282828;
+    position: absolute;
+    left: 40vw;
+    bottom: 14vh;
+}
+
+.welcomeModal3__warning {
+    color: #9c332c;
 }

@@ -53,3 +53,65 @@
 .songRow__left {
   display: flex;
 }
+
+.tooltip .tooltiptext__add {
+  visibility: hidden;
+  width: 120px;
+  background-color: #282828;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: relative;
+  z-index: 1;
+  top: -4vh;
+  right: 100px;
+}
+
+.tooltip:hover .tooltiptext__add {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext__add::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #282828 transparent transparent transparent;
+}
+
+.tooltip .tooltiptext__remove {
+  visibility: hidden;
+  width: 120px;
+  background-color: #282828;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: relative;
+  z-index: 1;
+  top: -4vh;
+  right: 115px;
+}
+
+.tooltip:hover .tooltiptext__remove {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext__remove::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #282828 transparent transparent transparent;
+}

@@ -20,6 +20,9 @@ export const initialState = {
     guest: false,
     nonFunctionalModal: false,
     welcomeModal1: true,
+    welcomeModal2: false,
+    welcomeModal3: false,
+    welcomeModal4: false,
 };
 
 const reducer = (state, action) => {
@@ -130,6 +133,21 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 welcomeModal1: action.welcomeModal1
+            }
+        case 'SET_WELCOME_MODAL_2':
+            return {
+                ...state,
+                welcomeModal2: action.welcomeModal2
+            }
+        case 'SET_WELCOME_MODAL_3':
+            return {
+                ...state,
+                welcomeModal3: action.welcomeModal3
+            }
+        case 'SET_WELCOME_MODAL_4':
+            return {
+                ...state,
+                welcomeModal4: action.welcomeModal4
             }
         default:
             return state;

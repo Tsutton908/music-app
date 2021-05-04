@@ -6,7 +6,7 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import '../styles/WelcomeModal1.css'
 function WelcomeModal1({ showModal, closeModal }) {
-    const [{ playlists, songToAdd, spotify, welcomeModal1 }] = useDataLayerValue();
+    const [{ playlists, songToAdd, spotify, welcomeModal1 }, dispatch] = useDataLayerValue();
 
     return (
         <>
@@ -30,19 +30,31 @@ function WelcomeModal1({ showModal, closeModal }) {
                     </h4>
                     <br />
                     <h4 className="welcomeModal1__notice">
-                    Notice: If you logged in using a non-premium spotify account, not all components will be usable.
+                    Notice: If you are logged in using a non-premium spotify account, not all components will be usable.
                     </h4>
                     
+                    <div className="welcomeModal1__continue">
+                        <a className="continue__button" onClick={() => {
+                            dispatch({
+                                type: 'SET_WELCOME_MODAL_1',
+                                welcomeModal1: false,
+                            })
+
+                            dispatch({
+                                type: 'SET_WELCOME_MODAL_2',
+                                welcomeModal2: true,
+                            })
+                        }}>
+                            Continue with Tour
+                            <ArrowForwardIosIcon className="continue__icon"/>
+                        </a>
+                    </div>
                 </div>
                 <div className="welcomeModal1_close_icon">
                         <CloseIcon onClick={() => {
                             closeModal()
                         }}/>
                 </div>
-                <button>
-                    Next
-                    <ArrowForwardIosIcon />
-                </button>
             </div>
         ) : null}
         </>
